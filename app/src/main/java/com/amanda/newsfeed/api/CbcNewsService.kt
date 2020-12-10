@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+const val START_PAGE_INDEX = 1
 private const val BASE_URL = "https://www.cbc.ca/aggregate_api/v1/"
 
 interface CbcNewsService {
