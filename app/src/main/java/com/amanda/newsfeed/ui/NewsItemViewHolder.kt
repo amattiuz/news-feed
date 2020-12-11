@@ -24,11 +24,11 @@ class NewsItemViewHolder(view: View) :  RecyclerView.ViewHolder(view) {
     }
 
     fun bind(news: NewsItem?) = when(news) {
-        null -> showPlaceholderData(news)
+        null -> showPlaceholderData()
         else -> showNewsData(news)
     }
 
-    private fun showPlaceholderData(news: NewsItem?) {
+    private fun showPlaceholderData() {
         title.text = itemView.resources.getString(R.string.please_wait)
         date.text = itemView.resources.getString(R.string.loading)
     }

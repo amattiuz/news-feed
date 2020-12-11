@@ -15,7 +15,7 @@ class NewsFeedViewModel : ViewModel() {
     private var service: CbcNewsService = CbsNewsServiceAdapter.create()
 
     fun getNewsStream(): Flow<PagingData<NewsItem>> = Pager(
-        config = PagingConfig(PAGING_SIZE, enablePlaceholders = false),
-        pagingSourceFactory = { NewsPagingSource(service) }
-    ).flow.cachedIn(viewModelScope)
+            config = PagingConfig(PAGING_SIZE, enablePlaceholders = false),
+            pagingSourceFactory = { NewsPagingSource(service) }
+        ).flow.cachedIn(viewModelScope)
 }

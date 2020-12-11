@@ -16,7 +16,7 @@ class NewsPagingSource (private val service: CbcNewsService) : PagingSource<Int,
             val response = service.getNews(position)
             LoadResult.Page(
                 data = response,
-                prevKey = if(position == START_PAGE_INDEX) null else position,
+                prevKey = if(position == START_PAGE_INDEX) null else position - 1,
                 nextKey = if (response.isEmpty()) null else position + 1
             )
         } catch (exception: IOException) {

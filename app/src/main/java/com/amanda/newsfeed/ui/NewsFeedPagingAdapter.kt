@@ -20,5 +20,6 @@ class NewsFeedPagingAdapter : PagingDataAdapter<NewsItem, NewsItemViewHolder>(ne
     override fun onBindViewHolder(holder: NewsItemViewHolder, position: Int)
             = holder.bind(getItem(position))
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = NewsItemViewHolder(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        NewsItemViewHolder.create(parent)
 }
