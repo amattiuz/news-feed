@@ -1,4 +1,4 @@
-package com.amanda.newsfeed.data.source
+package com.amanda.newsfeed.model
 
 import androidx.paging.PagingSource
 import com.amanda.newsfeed.api.CbcNewsService
@@ -6,6 +6,8 @@ import com.amanda.newsfeed.api.START_PAGE_INDEX
 import com.amanda.newsfeed.data.NewsItem
 import retrofit2.HttpException
 import java.io.IOException
+
+const val PAGING_SIZE = 10
 
 class NewsPagingSource (private val service: CbcNewsService) : PagingSource<Int, NewsItem>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, NewsItem> {

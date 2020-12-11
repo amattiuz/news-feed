@@ -6,7 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingVertical="@dimen/row_item_margin_vertical"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UnusedAttribute"/>
+
+   <!-- <TextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +34,6 @@
         android:layout_height="wrap_content"
         android:text="GO"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="407dp" />
+        tools:layout_editor_absoluteY="407dp" /> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
