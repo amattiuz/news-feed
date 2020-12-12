@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/txt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NEWS OF THE DAY"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/latest_banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

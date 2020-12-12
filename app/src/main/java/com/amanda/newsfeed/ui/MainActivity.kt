@@ -2,7 +2,6 @@ package com.amanda.newsfeed.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.amanda.newsfeed.R
 import com.amanda.newsfeed.model.NewsFeedViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,7 +13,6 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
-    lateinit var rvNews: RecyclerView
     lateinit var newsViewModel: NewsFeedViewModel
     lateinit var adapter: NewsFeedPagingAdapter
 
