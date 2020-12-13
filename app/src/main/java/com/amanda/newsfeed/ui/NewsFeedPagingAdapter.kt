@@ -5,7 +5,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.amanda.newsfeed.data.NewsItem
 
-class NewsFeedPagingAdapter : PagingDataAdapter<NewsItem, NewsItemViewHolder>(newsComparator) {
+class NewsFeedPagingAdapter() : PagingDataAdapter<NewsItem, NewsItemViewHolder>(newsComparator) {
 
     companion object {
         private val newsComparator = object : DiffUtil.ItemCallback<NewsItem>() {

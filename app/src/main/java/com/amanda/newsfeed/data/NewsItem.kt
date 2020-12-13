@@ -12,8 +12,8 @@ data class NewsItem(
   //  val source: String,
    // val sourceId: String,
     val title: String,
-  //  val type: String,
-    //val typeAttributes: com.amanda.newsfeed.data.TypeAttributes
+    val type: String,
+    val typeAttributes: TypeAttributes
    // val updatedAt: Long,
    // val version: String
 )

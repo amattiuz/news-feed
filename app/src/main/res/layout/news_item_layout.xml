@@ -50,22 +50,30 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/news_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/card_margin_left"
+                    android:layout_weight="2"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="Dec 10 2020, 01:33:44 AM UTC"
+                    android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/news_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/card_margin_left"
-                        android:layout_weight="2"
-                        android:padding="5dp"
-                        android:text="Dec 10 2020, 01:33:44 AM UTC"
-                        android:maxLines="1"
-                        android:ellipsize="end"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/news_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/card_margin_left"
+                    android:layout_weight="2"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Sports" />
+
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

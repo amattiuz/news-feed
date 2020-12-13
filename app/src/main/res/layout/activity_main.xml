@@ -16,6 +16,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/news_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="79dp"
+        android:paddingVertical="@dimen/row_item_margin_vertical"
+        app:layout_constraintTop_toBottomOf="@id/txt"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"
@@ -26,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt"
+        app:layout_constraintTop_toBottomOf="@id/news_type_spinner"
         tools:ignore="UnusedAttribute"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

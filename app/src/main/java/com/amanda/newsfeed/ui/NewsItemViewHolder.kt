@@ -16,8 +16,7 @@ class NewsItemViewHolder(private val view: View) :  RecyclerView.ViewHolder(view
     private val title: TextView = view.findViewById(R.id.news_title)
     private val date: TextView = view.findViewById(R.id.news_date)
     private val image: ImageView = view.findViewById(R.id.news_image)
-
-    private var news: NewsItem? = null
+    private val type: TextView = view.findViewById(R.id.news_type)
 
     companion object {
         fun create(parent: ViewGroup): NewsItemViewHolder {
@@ -35,13 +34,14 @@ class NewsItemViewHolder(private val view: View) :  RecyclerView.ViewHolder(view
     private fun showPlaceholderData() {
         title.text = itemView.resources.getString(R.string.please_wait)
         date.text = itemView.resources.getString(R.string.loading)
+        type.text = ""
     }
 
     private fun showNewsData(data: NewsItem) {
-        news = data
         title.text = data.title
         date.text = data.readableUpdatedAt
         setImageSource(data.images.square_140)
+        type.text = data.type
     }
 
     private fun setImageSource(url: String) {
