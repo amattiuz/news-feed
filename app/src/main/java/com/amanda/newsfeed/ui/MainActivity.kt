@@ -30,8 +30,10 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope(), Adapter
         //init variables
         newsViewModel = defaultViewModelProviderFactory.create(NewsFeedViewModel::class.java)
 
-        //set the recycler view adapter
-        list.adapter = adapter
+        //set the recycler view adapter with a load state footer to let the user know if
+        //internet connection is lost - loading indication is a free bonus from the new
+        //paging3 library ;-)
+        list.adapter = adapter.withLoadStateFooter(footer = ErrorMessageFooterAdapter { adapter.retry() })
 
         //adapter to populate the spinner
         typeAdapter = ArrayAdapter(

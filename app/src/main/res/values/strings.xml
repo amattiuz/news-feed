@@ -3,7 +3,7 @@
     <string name="header_title">Latest News from CBC</string>
     <string name="loading">Loading</string>
     <string name="please_wait">Please wait</string>
-    <string name="no_internet">No internet connection</string>
+    <string name="no_internet">Sorry, we can\'t load more news, it looks like you lost internet connection.</string>
     <string name="unknown">\?</string>
     <string name="retry">Try again</string>
 </resources>
