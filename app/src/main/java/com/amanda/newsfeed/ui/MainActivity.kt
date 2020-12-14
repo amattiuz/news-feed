@@ -31,8 +31,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope(), Adapter
 
         //init variables
         //get the view model using a custom factory
-        //using a custom factory is a way to allow mocking for unit and instrumented tests
-
+        //using a custom factory is a way to allow mocking for unit and instrumented test
         newsViewModel = ViewModelProvider(
             this,
             (application as NewsApplicationInterface).provideViewModelFactory()
