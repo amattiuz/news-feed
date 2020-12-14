@@ -1,0 +1,73 @@
+commit cdecb257d03e8c1442b5900e9e74841a4f9cc122
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Mon Dec 14 02:50:44 2020 -0500
+
+    Cleaning up. Deleting unused data classes generated from JSON.
+
+commit ae34399136c18450ac9185683f5d667a7b0ae09f
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Mon Dec 14 02:24:11 2020 -0500
+
+    Setting up instrumentations tests.
+    Adding dependencies, refactoring view model to make it more
+    testeable.
+    Creating a test application to mock data.
+
+commit 1b7e789902b5007d55b4136f05f25c33ac213379
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Sun Dec 13 13:54:21 2020 -0500
+
+    Adding load state indicator to inform user about internet loss.
+    Using the new paging library (paging3) to easily add a footer with
+    error message and loading progress bar.
+
+commit f10443f431ac6900c3f4eec87b0a301c83ae6cc9
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Sun Dec 13 13:10:32 2020 -0500
+
+    Adding filtering implementation.
+    Spinner on top shows a list of types dynamically fetched.
+    News on the lis are filtred on user selection of the spinner.
+
+commit d91c162cf500f07248a12566019ceadda8455888
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Fri Dec 11 22:09:45 2020 -0500
+
+    Adding images to each item. Using Glide to fetch them from server.
+
+commit a28a2730396187529446e5e5b405f280496d5426
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Fri Dec 11 14:37:51 2020 -0500
+
+    Changing main activity layout to include a kind of header
+
+commit 6e13a51a6739c3f91ee2f8ed072fa03d3acc23bb
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Thu Dec 10 22:15:59 2020 -0500
+
+    Create ViewModel and UI elements that will show data fetched from server
+
+commit 1061b51bb68252ba84da4a8da088fa69fd82887b
+Merge: f90857e cc48743
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Thu Dec 10 13:04:10 2020 -0500
+
+    Merge branch 'master' of git+ssh://github.com/amattiuz/news-feed
+
+commit f90857e16ba65d5c3789eb256e38d62da114396b
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Thu Dec 10 13:00:51 2020 -0500
+
+    Creating a data source to be used for pagination
+
+commit cc487432852a6fd967591a5f3abfa414bd8d4460
+Author: Amanda <amattiuz@gmail.com>
+Date:   Thu Dec 10 12:35:03 2020 -0500
+
+    Create README.md
+
+commit 7a1a158a13417804e1035b2a7ca446577eba5385
+Author: Amanda Mattiuz <amanca@amankali.kali.amanca>
+Date:   Thu Dec 10 12:16:22 2020 -0500
+
+    Retrofit boilerplate to fetch the news from server
