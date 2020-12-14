@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.amanda.newsfeed.NewsApplicationInterface
 import com.amanda.newsfeed.R
 import com.amanda.newsfeed.model.NewsFeedViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,7 +30,13 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope(), Adapter
         setContentView(R.layout.activity_main)
 
         //init variables
-        newsViewModel = defaultViewModelProviderFactory.create(NewsFeedViewModel::class.java)
+        //get the view model using a custom factory
+        //using a custom factory is a way to allow mocking for unit and instrumented tests
+
+        newsViewModel = ViewModelProvider(
+            this,
+            (application as NewsApplicationInterface).provideViewModelFactory()
+        ).get(NewsFeedViewModel::class.java)
 
         //set the recycler view adapter with a load state footer to let the user know if
         //internet connection is lost - loading indication is a free bonus from the new

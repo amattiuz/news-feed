@@ -13,7 +13,7 @@ data class NewsItem(
    // val sourceId: String,
     val title: String,
     val type: String,
-    val typeAttributes: TypeAttributes
+  //  val typeAttributes: TypeAttributes
    // val updatedAt: Long,
    // val version: String
 )
