@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 @OpenForTesting
-class NewsFeedViewModel : ViewModel() {
+class   NewsFeedViewModel : ViewModel() {
     private var service: CbcNewsService = CbsNewsServiceAdapter.create(BASE_URL)
 
     fun newsStream(): Flow<PagingData<NewsItem>> = Pager(
