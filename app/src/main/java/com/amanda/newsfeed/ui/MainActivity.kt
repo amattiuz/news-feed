@@ -6,8 +6,10 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.amanda.newsfeed.BASE_URL
 import com.amanda.newsfeed.NewsApplicationInterface
 import com.amanda.newsfeed.R
+import com.amanda.newsfeed.api.CbsNewsServiceAdapter
 import com.amanda.newsfeed.model.NewsFeedViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
@@ -34,7 +36,9 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope(), Adapter
         //using a custom factory is a way to allow mocking for unit and instrumented test
         newsViewModel = ViewModelProvider(
             this,
-            (application as NewsApplicationInterface).provideViewModelFactory()
+            (application as NewsApplicationInterface).provideViewModelFactory(
+                CbsNewsServiceAdapter.create(BASE_URL)
+            )
         ).get(NewsFeedViewModel::class.java)
 
         //set the recycler view adapter with a load state footer to let the user know if

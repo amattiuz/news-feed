@@ -2,6 +2,7 @@ package com.amanda.newsfeed
 
 import android.app.Application
 import androidx.lifecycle.ViewModelProvider
+import com.amanda.newsfeed.api.CbcNewsService
 import com.amanda.newsfeed.model.ViewModelFactory
 import com.facebook.stetho.Stetho
 
@@ -14,13 +15,13 @@ class NewsApplication : Application(), NewsApplicationInterface {
         Stetho.initializeWithDefaults(this)
     }
 
-    override fun provideViewModelFactory(): ViewModelProvider.Factory {
-        return ViewModelFactory()
+    override fun provideViewModelFactory(service: CbcNewsService): ViewModelProvider.Factory {
+        return ViewModelFactory(service)
     }
 }
 
 interface NewsApplicationInterface {
-    fun provideViewModelFactory() : ViewModelProvider.Factory
+    fun provideViewModelFactory(service: CbcNewsService) : ViewModelProvider.Factory
 }
 
 @OpenForTesting

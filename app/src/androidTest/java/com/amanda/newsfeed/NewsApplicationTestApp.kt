@@ -7,8 +7,11 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
+import com.amanda.newsfeed.api.CbcNewsService
+import com.amanda.newsfeed.api.CbsNewsServiceAdapter
 import com.amanda.newsfeed.data.Images
 import com.amanda.newsfeed.data.NewsItem
+import com.amanda.newsfeed.model.NewsFeedRepository
 import com.amanda.newsfeed.model.NewsFeedViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -16,7 +19,7 @@ import kotlinx.coroutines.flow.map
 
 class NewsApplicationTestApp : NewsApplicationInterface, Application() {
 
-    override fun provideViewModelFactory(): ViewModelProvider.Factory {
+    override fun provideViewModelFactory(service: CbcNewsService): ViewModelProvider.Factory {
         return ViewModelTestFactory()
     }
 }
@@ -33,11 +36,11 @@ class ViewModelTestFactory() : ViewModelProvider.Factory {
 }
 
 @OpenForTesting
-class NewsFeedViewTestModel : NewsFeedViewModel() {
+class NewsFeedViewTestModel : NewsFeedViewModel(repo = NewsFeedRepository(CbsNewsServiceAdapter.create(BASE_URL))) {
 
     val data = PagingData.from(itemsList())
 
-    override fun newsStream(): Flow<PagingData<NewsItem>> = flowOf(data).cachedIn(viewModelScope)
+    override suspend fun newsStream(): Flow<PagingData<NewsItem>> = flowOf(data).cachedIn(viewModelScope)
 
 
     override fun filteredNewsStream(typeFilter: String): Flow<PagingData<NewsItem>> {
@@ -45,7 +48,7 @@ class NewsFeedViewTestModel : NewsFeedViewModel() {
             .cachedIn(viewModelScope)
     }
 
-    override  fun newsTypes(): Flow<PagingData<String>> {
+    override suspend fun newsTypes(): Flow<PagingData<String>> {
         return flowOf(data) .map { data -> data.mapSync { it.type } }
             .cachedIn(viewModelScope)
     }
